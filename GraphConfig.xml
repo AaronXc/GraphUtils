@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+<graphs>
+	<settings1>
+		<colourList>r,b,g</colourList>
+		<labels>alias_names</labels>
+		<figures figures='1'>
+			<figure1 figure1='Single Switch Timing Diagram'>
+				<plots plots='2'>
+					<plot1 plot1='switch logic level'>switch</plot1>
+					<plot2 plot2='Output logic level'>output</plot2>
+				</plots>
+			</figure1>
+		</figures>
+	</settings1>
+	<settings2>
+		<colourList>r,b,g</colourList>
+		<labels>alias_names</labels>
+		<figures figures='1'>
+			<figure1 figure1='Double Switch Timing Diagram'>
+				<plots plots='3'>
+					<plot1 plot1='switch 1 logic level'>switch1</plot1>
+					<plot2 plot2='switch 2 logic level'>switch2</plot2>
+					<plot3 plot3='Output logic level'>Output</plot3>
+				</plots>
+			</figure1>
+		</figures>
+	</settings2>
+	<settings3>
+		<colourList>r,b,g</colourList>
+		<labels>alias_names</labels>
+		<figures figures='1'>
+			<figure1 figure1='Triple Switch Timing Diagram'>
+				<plots plots='4'>
+					<plot1 plot1='switch 1 logic level'>switch1</plot1>
+					<plot2 plot2='switch 2 logic level'>switch2</plot2>
+					<plot3 plot3='switch 3 logic level'>switch3</plot3>
+					<plot4 plot4='Output logic level'>ouput</plot4>
+				</plots>
+			</figure1>
+		</figures>
+	</settings3>
+	<dataSets>
+		<set1>
+			<filepath>C:\Users\Aaron W\Documents\academicTerm6\industrialControlAndInstrumentation\singleSwitchLog.csv</filepath>
+			<regX>^[0-9]+,([0-9]+)/([0-9]+)/([0-9]+)\s+([0-9]+):([0-9]+):([0-9]+),([0-9]+)/([0-9]+)/([0-9]+)\s+([0-9])+:([0-9]+):([0-9]+),([a-zA-Z0-9]+),.*$</regX>
+			<initialStates>switch=0,output=0</initialStates>
+			<settings>settings1</settings>
+		</set1>
+		<set2>
+			<filepath>C:\Users\Aaron W\Documents\academicTerm6\industrialControlAndInstrumentation\doubleSwitchLog.csv</filepath>
+			<regX>^[0-9]+,([0-9]+)/([0-9]+)/([0-9]+)\s+([0-9]+):([0-9]+):([0-9]+),([0-9]+)/([0-9]+)/([0-9]+)\s+([0-9])+:([0-9]+):([0-9]+),([a-zA-Z0-9]+),.*$</regX>
+			<initialStates>switch1=0,switch2=0,Output=0</initialStates>
+			<settings>settings2</settings>
+		</set2>
+		<set3>
+			<filepath>C:\Users\Aaron W\Documents\academicTerm6\industrialControlAndInstrumentation\TripleSwitchLog.csv</filepath>
+			<regX>^[0-9]+,([0-9]+)/([0-9]+)/([0-9]+)\s+([0-9]+):([0-9]+):([0-9]+),([0-9]+)/([0-9]+)/([0-9]+)\s+([0-9])+:([0-9]+):([0-9]+),([a-zA-Z0-9]+),.*$</regX>
+			<initialStates>switch1=0,switch2=0,switch3=0,ouput=1</initialStates>
+			<settings>settings3</settings>
+		</set3>
+	</dataSets>
+</graphs>
+</root>
