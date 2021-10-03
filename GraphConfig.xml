@@ -43,19 +43,19 @@
 	<dataSets>
 		<set1>
 			<filepath>C:\Users\Aaron W\Documents\academicTerm6\industrialControlAndInstrumentation\singleSwitchLog.csv</filepath>
-			<regX>^[0-9]+,([0-9]+)/([0-9]+)/([0-9]+)\s+([0-9]+):([0-9]+):([0-9]+),([0-9]+)/([0-9]+)/([0-9]+)\s+([0-9])+:([0-9]+):([0-9]+),([a-zA-Z0-9]+),.*$</regX>
+			<regX>^[0-9]+,([0-9]+)/([0-9]+)/([0-9]+)\s+([0-9]+):([0-9]+):([0-9]+),([0-9]+)/([0-9]+)/([0-9]+)\s+([0-9]+):([0-9]+):([0-9]+),([a-zA-Z0-9]+),.*$</regX>
 			<initialStates>switch=0,output=0</initialStates>
 			<settings>settings1</settings>
 		</set1>
 		<set2>
 			<filepath>C:\Users\Aaron W\Documents\academicTerm6\industrialControlAndInstrumentation\doubleSwitchLog.csv</filepath>
-			<regX>^[0-9]+,([0-9]+)/([0-9]+)/([0-9]+)\s+([0-9]+):([0-9]+):([0-9]+),([0-9]+)/([0-9]+)/([0-9]+)\s+([0-9])+:([0-9]+):([0-9]+),([a-zA-Z0-9]+),.*$</regX>
+			<regX>^[0-9]+,([0-9]+)/([0-9]+)/([0-9]+)\s+([0-9]+):([0-9]+):([0-9]+),([0-9]+)/([0-9]+)/([0-9]+)\s+([0-9]+):([0-9]+):([0-9]+),([a-zA-Z0-9]+),.*$</regX>
 			<initialStates>switch1=0,switch2=0,Output=0</initialStates>
 			<settings>settings2</settings>
 		</set2>
 		<set3>
 			<filepath>C:\Users\Aaron W\Documents\academicTerm6\industrialControlAndInstrumentation\TripleSwitchLog.csv</filepath>
-			<regX>^[0-9]+,([0-9]+)/([0-9]+)/([0-9]+)\s+([0-9]+):([0-9]+):([0-9]+),([0-9]+)/([0-9]+)/([0-9]+)\s+([0-9])+:([0-9]+):([0-9]+),([a-zA-Z0-9]+),.*$</regX>
+			<regX>^[0-9]+,([0-9]+)/([0-9]+)/([0-9]+)\s+([0-9]+):([0-9]+):([0-9]+),([0-9]+)/([0-9]+)/([0-9]+)\s+([0-9]+):([0-9]+):([0-9]+),([a-zA-Z0-9]+),.*$</regX>
 			<initialStates>switch1=0,switch2=0,switch3=0,ouput=1</initialStates>
 			<settings>settings3</settings>
 		</set3>
