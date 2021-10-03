@@ -143,7 +143,7 @@ def processInputs(filepath, regX, cfgRoot):
             minute = groupObj.group(5)
             second = groupObj.group(6)
             name = groupObj.group(13)
-            print("found data: {0}, {1}, {2}, {3}, {4}, {5}, {6}".format(year, month, day, hour, minute, second, name))
+            #print("found data: {0}, {1}, {2}, {3}, {4}, {5}, {6}".format(year, month, day, hour, minute, second, name))
             timeOfData = datetime.datetime(int(year), int(month), int(day), int(hour), int(minute), int(second))
             if(len(times) == 0):
                 timeZero = timeOfData # could instead keep the timeOfData somewhere else and put 0 and index 0 of times
@@ -160,7 +160,7 @@ def processInputs(filepath, regX, cfgRoot):
             hour = groupObj.group(10)
             minute = groupObj.group(11)
             second = groupObj.group(12)
-            print("found data: {0}, {1}, {2}, {3}, {4}, {5}, {6}".format(year, month, day, hour, minute, second, name))
+            #print("found data: {0}, {1}, {2}, {3}, {4}, {5}, {6}".format(year, month, day, hour, minute, second, name))
             timeOfData = datetime.datetime(int(year), int(month), int(day), int(hour), int(minute), int(second))
             relTime=(timeOfData-timeZero).total_seconds()
             timeInSeconds = relTime
