@@ -167,6 +167,23 @@ def processInputs(filepath, regX, cfgRoot):
             if timeInSeconds > latestTime:
                 latestTime = timeInSeconds
             times.append({name: timeInSeconds})
+        else:
+            groupObj = re.search("^[0-9]+,([0-9]+)/([0-9]+)/([0-9]+)\s+([0-9]+):([0-9]+):([0-9]+),...not finished...,([0-9a-zA-z]+),.*$", line)
+            year = groupObj.group(1)
+            month = groupObj.group(2)
+            day = groupObj.group(3)
+            hour = groupObj.group(4)
+            minute = groupObj.group(5)
+            second = groupObj.group(6)
+            name = groupObj.group(7)
+            #print("found data: {0}, {1}, {2}, {3}, {4}, {5}, {6}".format(year, month, day, hour, minute, second, name))
+            timeOfData = datetime.datetime(int(year), int(month), int(day), int(hour), int(minute), int(second))
+            relTime=(timeOfData-timeZero).total_seconds()
+            timeInSeconds = relTime
+            if timeInSeconds > latestTime:
+                latestTime = timeInSeconds
+            times.append({name: timeInSeconds})
+
 
     Gdata=dict()
     for data in times:
@@ -189,9 +206,12 @@ def processInputs(filepath, regX, cfgRoot):
         if Gdata[key]["time"][0] != 0:
             Gdata[key]["time"] = [0.0]+Gdata[key]["time"]
             Gdata[key]["data"] = [startState(key, filepath, cfgRoot)]+Gdata[key]["data"]
+        if Gdata[key]["time"][len(Gdata[key]["time"])-1] == latestTime and (startState(key, filepath, cfgRoot) == 1):
+            Gdata[key]["data"][Gdata[key]["data"][len(Gdata[key]["data"])-1]]=0
         if Gdata[key]["time"][len(Gdata[key]["time"])-1] != latestTime:
             Gdata[key]["time"].append(latestTime)
             Gdata[key]["data"].append(Gdata[key]["data"][len(Gdata[key]["data"])-1])
+
         for time in Gdata[key]["time"]:
             print(str(time)+", "+str(Gdata[key]["data"][Gdata[key]["time"].index(time)]))
 
